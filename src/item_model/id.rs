@@ -2,13 +2,13 @@ use std::fmt::{Debug,Display,Formatter,Result};
 use std::hash::Hash;
 use uuid::Uuid;
 
-#[derive(Debug, Eq, Hash, PartialEq)]
-struct Id {
-    id: String,
+#[derive(Clone, Debug, Eq, Hash, PartialEq)]
+pub struct Id {
+    pub id: String,
 }
 
 impl Id {
-    fn random() -> Self {
+    pub fn random() -> Self {
 	Self{
 	    id: Uuid::new_v4().urn().to_string(),
 	}
