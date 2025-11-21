@@ -9,6 +9,7 @@ edition = "2021"
 [dependencies]
 dioxus = "0.7.1"
 dioxus-ssr = "0.7.1"
+maplit = "1.0.2"
 pretty_assertions = "1.4.1"
 uuid = { version = "1.18.1", features = ["v4","js"] }
 

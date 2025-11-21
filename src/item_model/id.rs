@@ -21,10 +21,15 @@ impl std::fmt::Display for Id {
     }
 }
 
+impl From<&str> for Id {
+    fn from(s: &str) -> Self {
+	Id{ id: s.to_string()}
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::collections::HashSet;
     use crate::test_helpers::vector_asserts::*;
     
     #[test]
