@@ -52,11 +52,9 @@ pub fn TopList() -> Element {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use dioxus::prelude::*;
     use dioxus::core::VirtualDom;
     use dioxus::core::Element;
     use dioxus::core::Mutations;
-    use dioxus_signals::*;
 
     #[component]
     fn TestApp() -> Element {
