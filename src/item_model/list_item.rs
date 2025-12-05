@@ -2,13 +2,13 @@ use super::id::Id;
 use super::item_list::ItemList;
 
 use std::hash::{Hash, Hasher};
+use std::fmt;
 
 #[derive(Debug)]
 pub struct ListItem {
     pub id: Id,
     pub label: String,
-    pub children: ItemList,
-	
+    pub children: ItemList,	
 }
 
 impl ListItem {
@@ -32,6 +32,12 @@ impl Eq for ListItem {}
 impl Hash for ListItem {
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.id.hash(state);
+    }
+}
+
+impl fmt::Display for ListItem {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+	write!(f, "{}", self.label)
     }
 }
 

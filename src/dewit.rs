@@ -33,14 +33,14 @@ pub fn TopList() -> Element {
     let context = use_context::<RootList>();
     rsx!{
 	div { id: "toplist",
-	      // for (i, item) in context.lists.read().iter().enumerate() {
-	      // 	      ul {
-	      // 		  li {
-	      // 		      key: "{i}",
-	      // 		      "{item}" 
-	      // 		  }
-	      // 	      }
-	      // }
+	      for (i, item) in context.lists.read().iter().enumerate() {
+	       	  ul {
+	       		  li {
+	       		      key: "{i}",
+	       		      "{item}" 
+	       		  }
+	       	  }
+	      }
 	}
     }
 }
